@@ -5,7 +5,7 @@ export async function main(event, context, callback) {
     const params = {
         TableName: 'HCE-Recipes',
         KeyConditionExpression: "#uid = :uid",
-        IndexName: "userId-category-index",
+        IndexName: "userId-title-index",
         ExpressionAttributeNames: {
             "#uid": "userId",
         },

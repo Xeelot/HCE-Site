@@ -1,0 +1,13 @@
+{
+  "body": "{\"category\":\"recipe category8\"}",
+  "pathParameters": {
+    "id": "62809010-6e93-11e7-9c4b-918f2d4b7374"
+  },
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}

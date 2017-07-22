@@ -1,0 +1,212 @@
+# Welcome to Serverless!
+
+service: hce-serverless
+
+plugins:
+  - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: prod
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:DescribeTable
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:us-west-2:319333097595:table/HCE-*"
+
+functions:
+  create-ingCat:
+    handler: create-ingCat.main
+    events:
+      - http:
+          path: ingredientCategory
+          method: post
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  create-ing:
+    handler: create-ing.main
+    events:
+      - http:
+          path: ingredient
+          method: post
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  create-recCat:
+    handler: create-recCat.main
+    events:
+      - http:
+          path: recipeCategory
+          method: post
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  create-rec:
+    handler: create-rec.main
+    events:
+      - http:
+          path: recipe
+          method: post
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+
+  get-ingCat:
+    handler: get-ingCat.main
+    events:
+      - http:
+          path: ingredientCategory/{id}
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  get-ing:
+    handler: get-ing.main
+    events:
+      - http:
+          path: ingredient/{id}
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  get-recCat:
+    handler: get-recCat.main
+    events:
+      - http:
+          path: recipeCategory/{id}
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  get-rec:
+    handler: get-rec.main
+    events:
+      - http:
+          path: recipe/{id}
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+
+  list-ingCat:
+    handler: list-ingCat.main
+    events:
+      - http:
+          path: ingredientCategory
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  list-ing:
+    handler: list-ing.main
+    events:
+      - http:
+          path: ingredient
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  list-recCat:
+    handler: list-recCat.main
+    events:
+      - http:
+          path: recipeCategory
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  list-rec:
+    handler: list-rec.main
+    events:
+      - http:
+          path: recipe
+          method: get
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+
+  update-ingCat:
+    handler: update-ingCat.main
+    events:
+      - http:
+          path: ingredientCategory/{id}
+          method: put
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  update-ing:
+    handler: update-ing.main
+    events:
+      - http:
+          path: ingredient/{id}
+          method: put
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  update-recCat:
+    handler: update-recCat.main
+    events:
+      - http:
+          path: recipeCategory/{id}
+          method: put
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  update-rec:
+    handler: update-rec.main
+    events:
+      - http:
+          path: recipe/{id}
+          method: put
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+
+  delete-ingCat:
+    handler: delete-ingCat.main
+    events:
+      - http:
+          path: ingredientCategory/{id}
+          method: delete
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  delete-ing:
+    handler: delete-ing.main
+    events:
+      - http:
+          path: ingredient/{id}
+          method: delete
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  delete-recCat:
+    handler: delete-recCat.main
+    events:
+      - http:
+          path: recipeCategory/{id}
+          method: delete
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+  delete-rec:
+    handler: delete-rec.main
+    events:
+      - http:
+          path: recipe/{id}
+          method: delete
+          cors: true
+          authorizer:
+            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13

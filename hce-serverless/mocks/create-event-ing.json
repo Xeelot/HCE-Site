@@ -1,0 +1,10 @@
+{
+  "body": "{\"category\":\"ingredient category\",\"title\":\"ingredient test\",\"notes\":\"bunch o ing notes\",\"servingSize\":{\"quantity\":10,\"unit\":\"g\"},\"calories\":{\"quantity\":1,\"unit\":\"g\"},\"totalFat\":{\"quantity\":1,\"unit\":\"mg\"},\"saturatedFat\":{\"quantity\":1,\"unit\":\"mg\"},\"transFat\":{\"quantity\":1,\"unit\":\"mg\"},\"cholesterol\":{\"quantity\":1,\"unit\":\"mg\"},\"sodium\":{\"quantity\":1,\"unit\":\"mg\"},\"carbohydrate\":{\"quantity\":1,\"unit\":\"mg\"},\"fiber\":{\"quantity\":1,\"unit\":\"mg\"},\"sugar\":{\"quantity\":1,\"unit\":\"mg\"},\"protein\":{\"quantity\":1,\"unit\":\"mg\"}}",
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}

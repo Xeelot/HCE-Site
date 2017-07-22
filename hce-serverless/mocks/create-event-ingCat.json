@@ -1,0 +1,10 @@
+{
+  "body": "{\"category\":\"ingredient category5\"}",
+  "requestContext": {
+    "authorizer": {
+      "claims": {
+        "sub": "USER-SUB-1234"
+      }
+    }
+  }
+}

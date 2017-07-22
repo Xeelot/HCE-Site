@@ -1,0 +1,24 @@
+{
+  "name": "hce-app-client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "amazon-cognito-identity-js": "^1.19.0",
+    "aws-sdk": "^2.82.0",
+    "file-loader": "^0.11.2",
+    "react": "^15.6.1",
+    "react-bootstrap": "^0.31.0",
+    "react-dom": "^15.6.1",
+    "react-router-dom": "^4.1.1",
+    "react-scripts": "1.0.10"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "aws s3 sync build/ s3://hce-app-client",
+    "postdeploy": "aws cloudfront create-invalidation --distribution-id E24ODWJ8DJGTGW --paths /* && aws cloudfront create-invalidation --distribution-id E384KQXHK41UE6 --paths /*",
+    "eject": "react-scripts eject"
+  }
+}

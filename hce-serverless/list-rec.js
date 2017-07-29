@@ -10,7 +10,7 @@ export async function main(event, context, callback) {
             "#uid": "userId",
         },
         ExpressionAttributeValues: {
-            ":uid": event.requestContext.authorizer.claims.sub,
+            ":uid": event.requestContext.identity.cognitoIdentityId,
         }
     };
 

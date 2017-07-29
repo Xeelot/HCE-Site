@@ -1,10 +1,8 @@
 {
-  "body": "{\"category\":\"hello world\",\"title\":\"recipe title\",\"notes\":\"bunch o notes\",\"servings\":{\"quantity\":5,\"unit\":\"g\"},\"ingredients\": [{\"id\":\"ingredient1\",\"quantity\":1,\"unit\":\"g\"},{\"id\":\"ingredient2\",\"quantity\":2,\"unit\":\"mg\"},{\"id\":\"ingredient3\",\"quantity\":3,\"unit\":\"ml\"}]}",
+  "body": "{\"testId\":\"recId\",\"category\":\"hello world\",\"title\":\"recipe title\",\"notes\":\"bunch o notes\",\"servings\":{\"quantity\":5,\"unit\":\"g\"},\"ingredients\": [{\"id\":\"ingredient1\",\"quantity\":1,\"unit\":\"g\"},{\"id\":\"ingredient2\",\"quantity\":2,\"unit\":\"mg\"},{\"id\":\"ingredient3\",\"quantity\":3,\"unit\":\"ml\"}]}",
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

@@ -33,8 +33,7 @@ functions:
           path: ingredientCategory
           method: post
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   create-ing:
     handler: create-ing.main
     events:
@@ -42,8 +41,7 @@ functions:
           path: ingredient
           method: post
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   create-recCat:
     handler: create-recCat.main
     events:
@@ -51,8 +49,7 @@ functions:
           path: recipeCategory
           method: post
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   create-rec:
     handler: create-rec.main
     events:
@@ -60,8 +57,7 @@ functions:
           path: recipe
           method: post
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
 
   get-ingCat:
     handler: get-ingCat.main
@@ -70,8 +66,7 @@ functions:
           path: ingredientCategory/{id}
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   get-ing:
     handler: get-ing.main
     events:
@@ -79,8 +74,7 @@ functions:
           path: ingredient/{id}
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   get-recCat:
     handler: get-recCat.main
     events:
@@ -88,8 +82,7 @@ functions:
           path: recipeCategory/{id}
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   get-rec:
     handler: get-rec.main
     events:
@@ -97,8 +90,7 @@ functions:
           path: recipe/{id}
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
 
   list-ingCat:
     handler: list-ingCat.main
@@ -107,8 +99,7 @@ functions:
           path: ingredientCategory
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   list-ing:
     handler: list-ing.main
     events:
@@ -116,8 +107,7 @@ functions:
           path: ingredient
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   list-recCat:
     handler: list-recCat.main
     events:
@@ -125,8 +115,7 @@ functions:
           path: recipeCategory
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   list-rec:
     handler: list-rec.main
     events:
@@ -134,8 +123,7 @@ functions:
           path: recipe
           method: get
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
 
   update-ingCat:
     handler: update-ingCat.main
@@ -144,8 +132,7 @@ functions:
           path: ingredientCategory/{id}
           method: put
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   update-ing:
     handler: update-ing.main
     events:
@@ -153,8 +140,7 @@ functions:
           path: ingredient/{id}
           method: put
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   update-recCat:
     handler: update-recCat.main
     events:
@@ -162,8 +148,7 @@ functions:
           path: recipeCategory/{id}
           method: put
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   update-rec:
     handler: update-rec.main
     events:
@@ -171,8 +156,7 @@ functions:
           path: recipe/{id}
           method: put
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
 
   delete-ingCat:
     handler: delete-ingCat.main
@@ -181,8 +165,7 @@ functions:
           path: ingredientCategory/{id}
           method: delete
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   delete-ing:
     handler: delete-ing.main
     events:
@@ -190,8 +173,7 @@ functions:
           path: ingredient/{id}
           method: delete
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   delete-recCat:
     handler: delete-recCat.main
     events:
@@ -199,8 +181,7 @@ functions:
           path: recipeCategory/{id}
           method: delete
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam
   delete-rec:
     handler: delete-rec.main
     events:
@@ -208,5 +189,4 @@ functions:
           path: recipe/{id}
           method: delete
           cors: true
-          authorizer:
-            arn: arn:aws:cognito-idp:us-west-2:319333097595:userpool/us-west-2_et4M44h13
+          authorizer: aws_iam

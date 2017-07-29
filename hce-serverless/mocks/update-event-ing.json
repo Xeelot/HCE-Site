@@ -1,13 +1,11 @@
 {
   "body": "{\"category\":\"recCat1\", \"title\":\"testTitle\", \"notes\":\"lot o notes\", \"servingSize\":{\"quantity\":1,\"unit\":\"g\"},\"calories\":{\"quantity\":2,\"unit\":\"g\"},\"totalFat\":{\"quantity\":3,\"unit\":\"mg\"},\"saturatedFat\":{\"quantity\":4,\"unit\":\"mg\"},\"transFat\":{\"quantity\":5,\"unit\":\"mg\"},\"cholesterol\":{\"quantity\":6,\"unit\":\"mg\"},\"sodium\":{\"quantity\":7,\"unit\":\"mg\"},\"carbohydrate\":{\"quantity\":8,\"unit\":\"mg\"},\"fiber\":{\"quantity\":9,\"unit\":\"mg\"},\"sugar\":{\"quantity\":17,\"unit\":\"mg\"},\"protein\":{\"quantity\":18,\"unit\":\"mg\"}}",
   "pathParameters": {
-    "id": "d727f650-6f1b-11e7-9b9b-e11adfbde61d"
+    "id": "ingId"
   },
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

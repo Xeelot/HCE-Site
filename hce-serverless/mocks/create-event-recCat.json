@@ -1,10 +1,8 @@
 {
-  "body": "{\"category\":\"recipe category\"}",
+  "body": "{\"testId\":\"recCatId\",\"category\":\"recipe category\"}",
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

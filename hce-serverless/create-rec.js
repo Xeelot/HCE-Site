@@ -13,15 +13,16 @@ export async function main(event, context, callback) {
             "#tit": "title",
         },
         ExpressionAttributeValues: {
-            ":uid": event.requestContext.authorizer.claims.sub,
+            ":uid": event.requestContext.identity.cognitoIdentityId,
             ":tit": data.title,
         },
     };
+    const useId = ('testId' in data) ? data.testId : uuid.v1();
     const putParams = {
         TableName: 'HCE-Recipes',
         Item: {
-            userId: event.requestContext.authorizer.claims.sub,
-            id: uuid.v1(),
+            userId: event.requestContext.identity.cognitoIdentityId,
+            id: useId,
             category: data.category,
             createdAt: new Date().getTime(),
             modifiedAt: new Date().getTime(),
@@ -35,7 +36,7 @@ export async function main(event, context, callback) {
     try {
         const queryResult = await dynamoDbLib.call('query', queryParams);
         if (queryResult.Items && queryResult.Count > 0) {
-            callback(null, invalid({status: false, error: 'Recipe: ' + data.category + ' already exists!'}));
+            callback(null, invalid({status: false, error: 'Recipe: ' + data.title + ' already exists!'}));
         } else {
             const putResult = await dynamoDbLib.call('put', putParams);
             callback(null, success(putParams.Item));

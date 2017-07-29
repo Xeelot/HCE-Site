@@ -13,15 +13,16 @@ export async function main(event, context, callback) {
             "#cat": "category",
         },
         ExpressionAttributeValues: {
-            ":uid": event.requestContext.authorizer.claims.sub,
+            ":uid": event.requestContext.identity.cognitoIdentityId,
             ":cat": data.category,
         },
     };
+    const useId = ('testId' in data) ? data.testId : uuid.v1();
     const putParams = {
         TableName: 'HCE-IngredientCategories',
         Item: {
-            userId: event.requestContext.authorizer.claims.sub,
-            id: uuid.v1(),
+            userId: event.requestContext.identity.cognitoIdentityId,
+            id: useId,
             category: data.category,
             createdAt: new Date().getTime(),
             modifiedAt: new Date().getTime(),

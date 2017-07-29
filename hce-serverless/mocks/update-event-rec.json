@@ -1,13 +1,11 @@
 {
   "body": "{\"category\":\"hello world\",\"title\":\"recipe title\",\"notes\":\"bunch o notes2\",\"servings\":{\"quantity\":1,\"unit\":\"g\"},\"ingredients\": [{\"id\":\"ingredient1\",\"quantity\":7,\"unit\":\"g\"},{\"id\":\"ingredient2\",\"quantity\":8,\"unit\":\"mg\"},{\"id\":\"ingredient3\",\"quantity\":9,\"unit\":\"ml\"}]}",
   "pathParameters": {
-    "id": "18834300-6f28-11e7-85bf-f95250ce794f"
+    "id": "recId"
   },
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

@@ -1,12 +1,10 @@
 {
   "pathParameters": {
-    "id": "d77a2970-6f25-11e7-96ea-8bd7cd537ad3"
+    "id": "ingCatId"
   },
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

@@ -1,13 +1,11 @@
 {
   "body": "{\"category\":\"recipe category8\"}",
   "pathParameters": {
-    "id": "51fd9370-6f27-11e7-a324-e59c2c2cc7b3"
+    "id": "recCatId"
   },
   "requestContext": {
-    "authorizer": {
-      "claims": {
-        "sub": "USER-SUB-1234"
-      }
+    "identity": {
+      "cognitoIdentityId": "USER-SUB-1234"
     }
   }
 }

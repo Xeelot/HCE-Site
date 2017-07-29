@@ -5,7 +5,7 @@ export async function main(event, context, callback) {
     const params = {
         TableName: 'HCE-Recipes',
         Key: {
-            userId: event.requestContext.authorizer.claims.sub,
+            userId: event.requestContext.identity.cognitoIdentityId,
             id: event.pathParameters.id,
         },
     };
